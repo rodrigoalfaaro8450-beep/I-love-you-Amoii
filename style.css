@@ -1,0 +1,110 @@
+body {
+  background: #0d0d0d;
+  color: yellow;
+  font-family: 'Comic Sans MS', cursive;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.card {
+  margin-top: 60px;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+  animation: glow 2s infinite alternate;
+}
+
+p {
+  font-size: 1.5em;
+  margin: 15px 0;
+}
+
+.btn {
+  background: yellow;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 20px yellow;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: orange;
+  color: #fff;
+  box-shadow: 0 0 30px orange;
+}
+
+/* Animación de brillo en texto */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px yellow, 0 0 15px yellow;
+  }
+  to {
+    text-shadow: 0 0 20px orange, 0 0 40px yellow;
+  }
+}
+
+/* Estrellitas ✨ cayendo */
+.sparkles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkles::before, .sparkles::after {
+  content: "✨✨✨✨✨✨✨✨✨✨✨";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  font-size: 2rem;
+  color: gold;
+  animation: fall 10s linear infinite;
+}
+
+.sparkles::after {
+  top: -200px;
+  animation-delay: 5s;
+}
+
+@keyframes fall {
+  0% { transform: translateX(-50%) translateY(-100%); }
+  100% { transform: translateX(-50%) translateY(120vh); }
+}
+
+/* Flores SVG */
+.flores {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.flor {
+  width: 120px;
+  height: 120px;
+  animation: pulse 3s infinite;
+}
+
+.flor-izquierda {
+  transform: rotate(-15deg);
+}
+
+.flor-derecha {
+  transform: rotate(15deg);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
